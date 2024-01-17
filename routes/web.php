@@ -23,7 +23,7 @@ Route::get('/produto/remove/{id}', [ProdutoController::class, 'Remove'])->where(
 
 
 
-Route::get('/login', 'LoginController@login');
+
 
 
 
