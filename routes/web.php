@@ -8,9 +8,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', function () {
-    return ('<h1>Hello World</h1>');
-});
 
 Route::get('/produtos', [ProdutoController::class, 'Lista']);
+
+Route::get('/produtos/mostra/{id}',  [ProdutoController::class, 'Mostra'])->where('id', '[0-9]+');
+
+Route::get('/produtos/novo', [ProdutoController::class,'Novo']);
+
+Route::post('/produtos/adiciona', [ProdutoController::class,'Adiciona']);
+
 
