@@ -11,10 +11,20 @@ Route::get('/', function () {
 
 Route::get('/produtos', [ProdutoController::class, 'Lista']);
 
-Route::get('/produtos/mostra/{id}',  [ProdutoController::class, 'Mostra'])->where('id', '[0-9]+');
+Route::get('/produtos/json', [ProdutoController::class, 'ListaJson']);
 
-Route::get('/produtos/novo', [ProdutoController::class,'Novo']);
+Route::get('/produtos/mostra/{id}', [ProdutoController::class, 'Mostra'])->where('id', '[0-9]+');
 
-Route::post('/produtos/adiciona', [ProdutoController::class,'Adiciona']);
+Route::get('/produtos/novo', [ProdutoController::class, 'Novo']);
+
+Route::post('/produtos/adiciona', [ProdutoController::class, 'Adiciona']);
+
+Route::get('/produto/remove/{id}', [ProdutoController::class, 'Remove'])->where('id', '[0-9]+');
+
+
+
+Route::get('/login', 'LoginController@login');
+
+
 
 
